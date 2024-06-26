@@ -6,6 +6,17 @@ public class Podcast extends Audio{
     private int episodio;
     private String tema;
 
+    public Podcast(){
+
+    }
+
+    public Podcast(String titulo, int totalReproducoes, int totalCurtidas, double classificacao, String host, int episodio, String tema) {
+        super(titulo, totalReproducoes, totalCurtidas, classificacao);
+        this.host = host;
+        this.episodio = episodio;
+        this.tema = tema;
+    }
+
     public String host() {
         return host;
     }

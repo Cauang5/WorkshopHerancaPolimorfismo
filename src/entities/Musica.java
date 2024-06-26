@@ -10,6 +10,17 @@ public class Musica extends Audio{
         return album;
     }
 
+    public Musica(){
+
+    }
+
+    public Musica(String titulo, int totalReproducoes, int totalCurtidas, double classificacao, String album, String artista, String genero) {
+        super(titulo, totalReproducoes, totalCurtidas, classificacao);
+        this.album = album;
+        this.artista = artista;
+        this.genero = genero;
+    }
+
     public Musica setAlbum(String album) {
         this.album = album;
         return this;
@@ -51,4 +62,6 @@ public class Musica extends Audio{
                 ", Gênero: " + genero + ", Reproduções: " + getTotalReproducoes() +
                 ", Curtidas: " + getTotalCurtidas() + ", Classificação: " + getClassificacao() + "]";
     }
+
+
 }

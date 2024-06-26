@@ -7,6 +7,17 @@ public class Audio {
     private int totalCurtidas;
     private double classificacao;
 
+    public Audio(){
+
+    }
+
+    public Audio(String titulo, int totalReproducoes, int totalCurtidas, double classificacao) {
+        this.titulo = titulo;
+        this.totalReproducoes = totalReproducoes;
+        this.totalCurtidas = totalCurtidas;
+        this.classificacao = classificacao;
+    }
+
     public String getTitulo() {
         return titulo;
     }
@@ -47,8 +58,24 @@ public class Audio {
         this.totalCurtidas++;
     }
 
+
     public void reproduz(){
         this.totalReproducoes++;
+    }
+
+    // Sobrecarga do método `reproduz` com diferentes assinaturas
+    public void reproduz(int vezes) {
+        for (int i = 0; i < vezes; i++) {
+            reproduz();
+        }
+    }
+
+    public void reproduz(boolean altaQualidade) {
+        if (altaQualidade) {
+            System.out.println("Reproduzindo áudio em alta qualidade...");
+        } else {
+            reproduz();
+        }
     }
 
     @Override
